@@ -16,3 +16,7 @@ public class GroupByStringLength4 {
 		System.out.println(groupByLength);
 	}
 }
+/*
+ Output:
+ {4=[pear, kiwi], 5=[apple, grape], 6=[banana, orange]}
+ */
