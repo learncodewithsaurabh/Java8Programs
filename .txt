@@ -1,8 +1,0 @@
-# Ignore directory named 'logs'
-logs/
-
-# Ignore all files and directories inside 'temp'
-temp/
-
-# Ignore specific subdirectory 'output' inside a folder 'build'
-build/output/
