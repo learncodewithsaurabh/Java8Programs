@@ -6,3 +6,6 @@ temp/
 
 # Ignore specific subdirectory 'output' inside a folder 'build'
 build/output/
+
+# Ignore specific subdirectory 'bin' inside a folder 'build'
+bin/
