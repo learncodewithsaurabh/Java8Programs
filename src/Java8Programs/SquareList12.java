@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /*
-Q12. Write a program to merge two lists into a single list using the Java 8 Streams API?
+Q12. Write a program to Convert List of Integers to Their Squares using the Java 8 Streams API?
 Q#.	How to square each element of a list using Java 8 Streams?
 Q#.	How to apply the map() function to transform a list in Java 8?
 Q#.	How to use Java Streams to generate a list of squared values from an integer list?
@@ -16,8 +16,8 @@ Q#.	How to use the map() method to perform element-wise operations in a stream i
 */
 public class SquareList12 {
     public static void main(String[] args) {
-        List<Integer> list = Arrays.asList(2, 3, 4,  5,  6);
-        List<Integer> squares = list.stream().map(n->n*n).collect(Collectors.toList());
-        System.out.println(squares);
+        List<Integer> numbers = Arrays.asList(2,3,4,5,6);
+        List<Integer> squareNumbers = numbers.stream().map(n -> n*n).collect(Collectors.toList());
+        System.out.println(squareNumbers);
     }
 }
