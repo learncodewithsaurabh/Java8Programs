@@ -18,5 +18,5 @@ public class GroupByStringLength4 {
 }
 /*
  Output:
- {4=[pear, kiwi], 5=[apple, grape], 6=[banana, orange]}
+{4=[pear, kiwi], 5=[apple, grape], 6=[banana, orange]}
  */
