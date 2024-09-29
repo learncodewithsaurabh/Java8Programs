@@ -14,5 +14,4 @@ public class FindGreaterThan10_16 {
         List<Integer> numGreaterThan10List = numbers.stream().filter(n-> n>10).collect(Collectors.toList());
         System.out.println(numGreaterThan10List);
     }
-
 }
