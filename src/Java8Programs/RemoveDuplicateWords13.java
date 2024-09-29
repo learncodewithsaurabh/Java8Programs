@@ -23,5 +23,4 @@ public class RemoveDuplicateWords13 {
         List<String> uniqueWordList = words.stream().distinct().collect(Collectors.toList());
         System.out.println(uniqueWordList);
     }
-
 }
