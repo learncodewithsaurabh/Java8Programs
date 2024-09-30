@@ -13,5 +13,4 @@ public class SumOfElements15 {
        int  sum =  numbers.stream().mapToInt(Integer::intValue).sum();
         System.out.println("Sum: "+sum);
     }
-
 }
