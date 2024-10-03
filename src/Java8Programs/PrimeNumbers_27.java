@@ -4,8 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 /*
-Q27. Write a program  to collect prime numbers from a list
-    using the Java 8 Streams API.
+Q27. Write a program  to collect prime numbers from a list using the Java 8 Streams API.
     Sample;
         Input:   [ 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
         Output:  [ 2, 3, 5, 7 ]

@@ -12,11 +12,11 @@ public class PalindromicStrings_32 {
     public static void main(String[] args) {
         List<String> words= Arrays.asList("madam", "apple", "racecar", "banana", "level");
         List<String> palindromicWord = words.stream()
-                                                .filter(word -> new StringBuilder(word)
+                                              .filter(word -> new StringBuilder(word)
                                                                             .reverse()
                                                                             .toString()
                                                                             .equals(word))
-                                                    .collect(Collectors.toList());
+                                                  .collect(Collectors.toList());
         System.out.println(palindromicWord);
     }
 }
