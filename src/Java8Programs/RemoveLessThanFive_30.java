@@ -1,5 +1,6 @@
 package Java8Programs;
 
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -10,7 +11,8 @@ import java.util.stream.Collectors;
 public class RemoveLessThanFive_30 {
     public static void main(String[] args) {
         List<Integer> numbers = Arrays.asList(3, 7, 2, 5, 9, 1, 6);
-        List<Integer> filtered = numbers.stream().filter(n->n<5).collect(Collectors.toList());
-        System.out.println(filtered);
+        List<Integer> filteredNumbers = numbers.stream().filter(n-> n>=5).collect(Collectors.toList());
+        System.out.println(filteredNumbers);
     }
+
 }
