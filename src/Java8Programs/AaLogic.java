@@ -1,6 +1,27 @@
 package Java8Programs;
 
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 public class AaLogic {
+     public class FindAllUniqueCharacters_55 {
+        String str = "hello world";
+        Set<Character> uniqueCharacters = str
+            .chars()
+            .mapToObj(c -> (char) c)
+            .filter(c -> c != ' ')
+            .collect(Collectors.toCollection(LinkedHashSet::new));
+            System.out.println(uniqueCharacters);
+    }
+
+    public class ReverseCharactersInStrings_53 {
+        List<String> words = Arrays.asList("apple", "banana", "cherry");
+        List<String> reverseWord = words.stream()
+            .map(word -> new StringBuilder(word).reverse().toString())
+            .collect(Collectors.toList());
+            System.out.println("Reverse Words: "+reverseWord);
+    }
+
    class Employee {
         private String name;
         private String department;
@@ -16,9 +37,7 @@ public class AaLogic {
             .collect(Collectors.toList());
             itEmployee.forEach(System.out::println);
     }
-}
 
- import java.util.Comparator;
 class Employee {
     private String name;
     private double salary;
@@ -35,7 +54,6 @@ public class FindHighestPaidEmployee_67 {
         .orElseThrow(() -> new RuntimeException("No employee found"));
             System.out.println("Highest Paid Employee = "+highestPaidEmp);
 }
-    }
 
 //----------
 class Employee {
@@ -52,14 +70,15 @@ public class FindTotalSalaryByDepartment_68 {
 
     Map<String, Double> totalSalaryByDepartment = employees.stream()
         .collect(
-            Collectors.groupingBy(Employee::getDepartmentName,
-                Collectors.summingDouble(Employee::getSalary)
+                 Collectors.groupingBy(Employee::getDepartmentName,
+                 Collectors.summingDouble(Employee::getSalary
+                 )
             )
         );
             totalSalaryByDepartment.forEach((dept,salary)->System.out.println(dept +" : "+salary));
 }
 
-        import java.util.Comparator;
+
 class Employee {
     private String empName;
     private String departmentName;
@@ -95,7 +114,6 @@ public class AllSubsets_38 {
 
             for(Integer element :list) {
                 List<List<Integer>> innerSubSets = new ArrayList<>();
-
                 for (List<Integer> subset : outerSubSets) {
                     List<Integer> newSubSet = new ArrayList<>(subset);
                     newSubSet.add(element);
@@ -127,7 +145,6 @@ public class CalculateFactorials_58 {
             System.out.println(factorials);
 }
 
-    import java.util.stream.IntStream;
 public class CheckContainsSublist_44 {
     List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6);
     List<Integer> subList = Arrays.asList(3, 4, 5, 6);
@@ -148,7 +165,6 @@ public class CheckWordStartingWithA_5 {
             }
 }
 
-    import java.util.Set;
 public class CollectOddNumbersToSet_19 {
     List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
     Set<Integer> oddNumbers = numbers.stream().filter(n -> n % 2 != 0).collect(Collectors.toSet());
@@ -169,8 +185,6 @@ public class ConevrtToUppercase2 {
             System.out.println(upperWords);
 }
 
-        import java.util.HashSet;
-        import java.util.Set;
 public class ConvertListToSet_33 {
     List<String> words = Arrays.asList("apple", "banana", "grape", "orange", "banana");
     Set<String> wordSet = new HashSet<>(words);
@@ -201,7 +215,7 @@ public class CountPalindromes_37 {
         .stream()
         .filter(word -> new StringBuilder(word).reverse().toString().equals(word))
         .count();
-            System.out.println("Number of palindroms: "+count);
+    System.out.println("Number of palindroms: "+count);
 }
 
 public class CountStringDigits_61 {
@@ -226,7 +240,6 @@ public class CreateMapFromTwoLists_62 {
             System.out.println("Created map from two list: "+mapFromTwoList);
 }
 
-        import java.util.stream.Stream;
 public class FibonacciNumbers_36 {
     int termNumber = 10;
     List<Integer> fibonacciNumbers = Stream
@@ -249,18 +262,6 @@ public class FilterStringsByCharacter_25 {
             System.out.println(filterWords);
 }
 
-        import java.util.LinkedHashSet;
-        import java.util.Set;
-public class FindAllUniqueCharacters_55 {
-    String str = "hello world";
-    Set<Character> uniqueCharacters = str
-        .chars()
-        .mapToObj(c -> (char) c)
-        .filter(c -> c != ' ')
-        .collect(Collectors.toCollection(LinkedHashSet::new));
-            System.out.println(uniqueCharacters);
-}
-
 public class FindAverageLengthString_59 {
     List<String> words = Arrays.asList("apple", "banana", "kiwi");
     double avgStringLength = words.stream().mapToInt(String::length).average().orElse(0);
@@ -276,7 +277,6 @@ public class FindClosestToValue_46 {
             System.out.println("Closest value:"+closedValue);
 }
 
-        import java.util.Set;
 public class FindCommonElements_45 {
     List<String> list1 = Arrays.asList("apple", "banana", "grape", "orange");
     List<String> list2 = Arrays.asList("banana", "grape", "kiwi");
@@ -284,8 +284,6 @@ public class FindCommonElements_45 {
             System.out.println("Common List Elements: "+commonListElement);
 }
 
-        import java.util.HashSet;
-        import java.util.Set;
 public class FindDuplicates6 {
     List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 3, 4, 7, 8, 6);
     Set<Integer> seen = new HashSet<Integer>();
@@ -297,7 +295,6 @@ public class FindDuplicates6 {
 
 }
 
-        import java.util.Comparator;
 public class FindFirstLongestWord_47 {
     String sentence = "My name is Saurabh Kumar, and I work at Capgemini as a Java Developer1";
     String longestString = Arrays.stream(sentence.split(" "))
@@ -306,8 +303,6 @@ public class FindFirstLongestWord_47 {
             System.out.println("Longest Word: "+longestString);
 }
 
-        import java.util.HashSet;
-        import java.util.Set;
 public class FindFirstRepeatedElement_50 {
     List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 2, 5, 3, 6);
     Set<Integer> seen = new HashSet<>();
@@ -336,34 +331,25 @@ public class FindLongestPalindrome_56 {
     List<String> palindromes = words.stream()
         .filter(word -> word.equalsIgnoreCase(new StringBuilder(word).reverse().toString()))
         .collect(Collectors.toList());
-            if(palindromes.isEmpty())
-
-    {
-        System.out.println("No Palindrome Found!");
-    } else
-
-    {
+       if(palindromes.isEmpty()) {
+          System.out.println("No Palindrome Found!");
+        } else {
         int maxLength = palindromes.stream().mapToInt(String::length).max().orElse(0);
-
         List<String> longestPalindromes = palindromes.stream()
             .filter(word -> word.length() == maxLength)
             .collect(Collectors.toList());
         System.out.println("Longest palindrome(s): " + longestPalindromes);
     }
-
 }
 
 public class FindLongestWordsInSentence_57 {
     String sentence = "My name is Saurabh, and I work at Capgemini as a Java Developer";
     int maxLength = Arrays.stream(sentence.split(" ")).mapToInt(String::length).max().orElse(0);
-
     List<String> longestWord = Arrays.stream(sentence.split(" "))
         .filter(w -> w.length() == maxLength)
         .collect(Collectors.toList());
             System.out.println("Longest Word(s): "+longestWord);
 }
-
-    import java.util.Optional;
 
 public class FindMinimum_23 {
     List<Integer> numbers = Arrays.asList(12, 45, 23, 5, 87, 19);
@@ -371,48 +357,30 @@ public class FindMinimum_23 {
             min.ifPresent(value ->System.out.println("Minimum number are: "+value));
 }
 
-    import java.util.Optional;
-
 public class FindShortestString_49 {
     List<String> words = Arrays.asList("apple", "banana", "kiwi", "orange", "grape");
     Optional<String> shortestString = words.stream().min((s1, s2) -> Integer.compare(s1.length(), s2.length()));
             shortestString.ifPresent(w ->System.out.println("Shortest String in a List = "+w));
 }
 
-    import java.util.LinkedHashMap;
-
 public class FirstNonRepeatedCharacter_41 {
     String input = "Saurabh";
     Map<Character, Integer> characterCount = new LinkedHashMap<>();
-            for(
-    char c :input.toCharArray())
-
-    {
+    for(char c :input.toCharArray()){
         characterCount.put(c, characterCount.getOrDefault(c, 0) + 1);
     }
-            characterCount.entrySet().
-
+    characterCount.entrySet().
     stream()
-                .
-
-    filter(entry ->entry.getValue()==1)
-        .
-
-    map(Map.Entry::getKey)
-                .
-
-    findFirst()
-                .
-
-    ifPresent(System.out::println);
+    .filter(entry ->entry.getValue()==1)
+    .map(Map.Entry::getKey)
+    .findFirst()
+    .ifPresent(System.out::println);
 }
 
 public class FirstWordGet14 {
     List<String> words = Arrays.asList("apple", "banana", "orange", "grape");
-            words.stream().
-
-    findFirst().
-
+            words.stream()
+                 .findFirst().
     ifPresent(System.out::println);
 }
 
@@ -425,21 +393,14 @@ public class FlattenList8 {
 
 }
 
-    import java.util.Optional;
-
 public class GetMaxProductOfTwoIntegers_43 {
     List<Integer> numbers = Arrays.asList(3, 3, 3, 7);
-
-            if(numbers ==null||numbers.isEmpty())
-
-    {
+    if(numbers ==null||numbers.isEmpty()) {
         System.out.println("List is empty...");
         return;
     }
 
-            if(numbers.size() < 2)
-
-    {
+    if(numbers.size() < 2){
         System.out.println("List must contain at least two integers.");
         return;
     }
@@ -447,15 +408,11 @@ public class GetMaxProductOfTwoIntegers_43 {
     Optional<Integer> maxProduct = numbers.stream()
         .flatMap(i -> numbers.stream().filter(j -> !i.equals(j)).map(j -> i * j))
         .max(Integer::compareTo);
-            if(maxProduct.isPresent())
-
-    {
-        System.out.println("Maximum product of two integers: " + maxProduct.get());
-    } else
-
-    {
-        System.out.println("No product could be calculated");
-    }
+        if(maxProduct.isPresent()){
+            System.out.println("Maximum product of two integers: " + maxProduct.get());
+        } else {
+            System.out.println("No product could be calculated");
+        }
 }
 
 public class GroupByStringLength4 {
@@ -476,8 +433,6 @@ public class LongestStringLength_17 {
             System.out.println("Longest string length: "+longStrLength);
 }
 
-    import java.util.Optional;
-
 public class MaxValue3 {
     List<Integer> numbers = Arrays.asList(10, 50, 30, 45, 88);
     Optional<Integer> maxValue = numbers.stream().max(Integer::compareTo);
@@ -492,8 +447,6 @@ public class MedianValue_34 {
             System.out.println("Median: "+median);
 }
 
-    import java.util.stream.Stream;
-
 public class MergeLists11 {
     List<String> list1 = Arrays.asList("apple", "banana", "grape");
     List<String> list2 = Arrays.asList("orange", "kiwi", "pear");
@@ -507,9 +460,7 @@ public class MostFrequentElement_60 {
 
     {
         System.out.println("The list is empty. No frequent element to find.");
-    } else
-
-    {
+    } else {
         Map<Integer, Long> freqElement = numbers.stream().collect(Collectors.groupingBy(n -> n, Collectors.counting()));
         long maxFreq = freqElement.values().stream().max(Long::compare).orElse(0L);
         List<Integer> mostFreElement = freqElement
@@ -607,18 +558,6 @@ public class RemoveNullValues7 {
     List<String> nonNullWords = words.stream().filter(word -> word != null).collect(Collectors.toList());
             System.out.println(nonNullWords);
 }
-//output: [apple, banana, grape, kiwi]
-
-public class ReverseCharactersInStrings_53 {
-    List<String> words = Arrays.asList("apple", "banana", "cherry");
-    List<String> reverseWord = words.stream()
-        .map(word -> new StringBuilder(word).reverse().toString())
-        .collect(Collectors.toList());
-            System.out.println("Reverse Words: "+reverseWord);
-}
-    }
-
-        import java.util.Collections;
 
 public class ReverseList_39_a {
     List<String> words = Arrays.asList("apple", "banana", "orange", "grape", "kiwi");
@@ -629,7 +568,7 @@ public class ReverseList_39_a {
             System.out.println(reverseWords);
 }
 
-    import java.util.Collections;
+
 
 public class ReverseList_39_b {
     List<String> words = Arrays.asList("apple", "banana", "orange", "grape", "kiwi");
@@ -637,7 +576,7 @@ public class ReverseList_39_b {
             System.out.println(words);
 }
 
-    import java.util.Optional;
+
 
 public class SecondHighestElement_18 {
     List<Integer> numbers = Arrays.asList(3, 8, 15, 10, 12, 25, 7);
@@ -645,7 +584,7 @@ public class SecondHighestElement_18 {
             secondHighestNum.ifPresent(System.out::println);
 }
 
-    import java.util.Optional;
+
 
 public class SecondSmallest_31 {
     List<Integer> numbers = Arrays.asList(3, 7, 2, 5, 9, 1, 6);
@@ -666,8 +605,6 @@ public class SortByStringLength_28 {
         .collect(Collectors.toList());
             System.out.println(sortedWordByLength);
 }
-
-    import java.util.Comparator;
 
 public class SortStringByLastCharacter_51 {
     List<String> words = Arrays.asList("apple", "banana", "grape", "orange", "kiwi");
@@ -711,14 +648,8 @@ public class TransactionByDate_65 {
             sumByDate.entrySet().
 
     stream()
-                .
-
-    sorted(Map.Entry.comparingByKey())
-        .
-
-    forEach(e ->System.out.println(e.getKey()+": "+e.getValue()));
-
-
+    .sorted(Map.Entry.comparingByKey())
+    .forEach(e ->System.out.println(e.getKey()+": "+e.getValue()));
 }
 
 public class WordFrequency10 {
