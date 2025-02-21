@@ -184,17 +184,15 @@ public class ConevrtToUppercase2 {
         .collect(Collectors.toList());
             System.out.println(upperWords);
 }
-
 public class ConvertListToSet_33 {
     List<String> words = Arrays.asList("apple", "banana", "grape", "orange", "banana");
     Set<String> wordSet = new HashSet<>(words);
-            System.out.println(wordSet);
+    System.out.println(wordSet);
 }
-
 public class CountCharactersInList_40 {
     List<String> words = Arrays.asList("apple", "banana", "grape", "orange");
     int totalCharacters = words.stream().mapToInt(String::length).sum();
-            System.out.println("Total number of characters: "+totalCharacters);
+    System.out.println("Total number of characters: "+totalCharacters);
 }
 
 public class CountDistinctElements_54 {
@@ -202,13 +200,20 @@ public class CountDistinctElements_54 {
     long countDistinctNumber = numbers.stream().distinct().count();
             System.out.println("Number of distinct element: "+countDistinctNumber);
 }
-
 public class CountOccurrences_42 {
     List<String> words = Arrays.asList("apple", "banana", "apple", "grape", "banana", "orange", "banana");
-    Map<String, Integer> occurrence = words.stream().collect(Collectors.groupingBy(word -> word, Collectors.collectingAndThen(Collectors.counting(), Long::intValue)));
+    Map<String, Integer> occurrence =
+        words.stream()
+                 .collect(
+                     Collectors.groupingBy(
+                                     word -> word,
+                                     Collectors.collectingAndThen(
+                                                    Collectors.counting(),
+                                                    Long::intValue)
+                     )
+                 );
             System.out.println(occurrence);
 }
-
 public class CountPalindromes_37 {
     List<String> words = Arrays.asList("madam", "apple", "racecar", "banana", "level");
     long count = words
@@ -217,7 +222,6 @@ public class CountPalindromes_37 {
         .count();
     System.out.println("Number of palindroms: "+count);
 }
-
 public class CountStringDigits_61 {
     String str = "Hello12345";
     long digitCount = str.chars().filter(Character::isDigit).count();
@@ -230,7 +234,7 @@ public class CountVowels_48 {
         .flatMapToInt(String::chars)
         .filter(ch -> "AEIOUaeiou".indexOf(ch) != -1)
         .count();
-            System.out.println("Total Vowels = "+countVowel);
+    System.out.println("Total Vowels = "+countVowel);
 }
 
 public class CreateMapFromTwoLists_62 {
